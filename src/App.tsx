@@ -167,7 +167,7 @@ export default function App() {
         .build();
 
       const signed = await signTransaction(transaction.toXDR(), {
-        networkPassphrase: NETWORK_PASSPHRASE,
+        network: "TESTNET",
         address: wallet,
       });
       if (signed.error) throw new Error(String(signed.error));
