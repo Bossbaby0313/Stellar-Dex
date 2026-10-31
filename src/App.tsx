@@ -26,7 +26,16 @@ type PathRecord = {
 };
 
 const XLM: Token = { code: "XLM", name: "Stellar Lumens", color: "#8b9cff" };
-const starterTokens = [XLM];
+
+// Publicly documented Stellar Testnet assets. Issuers are network-specific;
+// these are not interchangeable with assets bearing the same code on mainnet.
+const starterTokens: Token[] = [
+  XLM,
+  { code: "USDC", issuer: "GBBD47IF6LWK7P7MDEVSCWR7DPUWV3NY3DTQEVFL4NAT4AQH3ZLLFLA5", name: "USD Coin (Testnet)", color: "#2775ca" },
+  { code: "EURC", issuer: "GB3Q6QDZYTHWT7E5PVS3W7FUT5GVAFC5KSZFFLPU25GO7VTC3NM2ZTVO", name: "Euro Coin (Testnet)", color: "#4b8de8" },
+  { code: "SRT", issuer: "GCDNJUBQSX7AJWLJACMJ7I4BC3Z47BQUTMHEICZLE6MU4KQBRYG5JY6B", name: "Stellar Reference Token", color: "#d7a85b" },
+  { code: "REAL8", issuer: "GA2ZL55BWAKNCERJTYIKNQ27BD6BPOSZMZXQUMXUUKSZDF4A5GZFZUI7", name: "REAL8 Testnet", color: "#43d6b0" },
+];
 const assetFor = (token: Token) =>
   token.code === "XLM" ? Asset.native() : new Asset(token.code, token.issuer!);
 const tokenKey = (token: Token) => token.code === "XLM" ? "native" : `${token.code}:${token.issuer}`;
