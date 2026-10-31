@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{font-family:Manrope,ui-sans-serif,system-ui,sans-serif;color:#f4f6ff;background:#080d18;font-synthesis:none;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+body{margin:0;min-width:320px;background:#080d18}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.app-shell{position:relative;min-height:100vh;overflow:hidden;background:radial-gradient(ellipse at 50% 5%,#18213a 0%,#0b1222 40%,#080d18 75%);padding:0 5.5vw 28px}
+.ambient{position:absolute;pointer-events:none;border-radius:50%;filter:blur(90px);opacity:.15}
+.ambient-one{width:320px;height:320px;background:#5266ff;top:180px;left:-180px}
+.ambient-two{width:380px;height:380px;background:#2bbca5;right:-220px;top:440px}
+.topbar{height:82px;max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;position:relative;z-index:1}
+.brand{display:flex;align-items:center;gap:10px;color:#f6f7ff;text-decoration:none;font-size:22px;font-weight:800;letter-spacing:-1.2px}
+.brand-mark{width:29px;height:29px;border-radius:10px;display:grid;place-items:center;background:#7888ff;color:#fff;font-size:20px}
+.brand-dot{color:#8d9aff}
+nav{display:flex;gap:34px;margin-left:60px}
+nav a,footer a{color:#8e9ab4;text-decoration:none;font-size:12px;font-weight:600;transition:.2s}
+nav a:hover,nav a.active{color:#fff}
+.top-actions{display:flex;align-items:center;gap:15px}
+.network-pill,.testnet-tag{font:10px 'DM Mono',monospace;letter-spacing:.5px;color:#9be5ce;background:#17352f;border:1px solid #2c6457;padding:8px 10px;border-radius:20px}
+.network-pill i,.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#4be0ad;margin-right:7px;box-shadow:0 0 10px #4be0ad}
+.connect-btn{background:#f4f6ff;color:#10172a;border:0;border-radius:9px;padding:11px 16px;font-size:11px;font-weight:800}
+.hero{max-width:1200px;margin:72px auto 42px;position:relative;z-index:1}
+.eyebrow,.card-kicker,.side-title{font:10px 'DM Mono',monospace;letter-spacing:1.5px;color:#9ba9c4}
+.eyebrow{display:flex;align-items:center;gap:10px}
+.eyebrow-line{width:25px;height:1px;background:#8494ff}
+.testnet-tag{padding:4px 8px;font-size:8px}
+h1{font-size:clamp(43px,6vw,70px);line-height:1.08;letter-spacing:-4px;margin:23px 0 16px;font-weight:800}
+h1 span{color:#8b9aff}
+.hero-copy{color:#95a1ba;font-size:13px;line-height:1.8}
+.workspace{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr);gap:20px;position:relative;z-index:1;align-items:start}
+.swap-card,.side-card{background:linear-gradient(145deg,#151f34ed,#10192bed);border:1px solid #ffffff14;border-radius:18px;box-shadow:0 24px 80px #0003}
+.swap-card{padding:25px}
+.card-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.card-kicker{font-size:9px;color:#8493b3}
+h2{font-size:20px;margin:6px 0 0;letter-spacing:-.7px}
+.settings-btn{border:1px solid #ffffff20;background:#1c2941;color:#a9b5d0;border-radius:9px;width:34px;height:34px}
+.field-label{display:flex;justify-content:space-between;color:#8794ad;font-size:10px;margin:0 1px 8px}
+.token-field{display:flex;align-items:center;justify-content:space-between;background:#0b1425;border:1px solid #ffffff0e;border-radius:12px;padding:15px 13px}
+.token-field input{width:55%;background:transparent;border:0;outline:0;color:#fff;font-size:25px;font-weight:700;letter-spacing:-1px;min-width:0}
+.token-field select{background:#202c47;border:1px solid #34415d;color:#fff;border-radius:9px;padding:10px 12px;font-weight:800;font-size:12px;max-width:45%}
+.flip-btn{display:block;margin:-1px auto;position:relative;z-index:1;width:31px;height:31px;border-radius:9px;background:#273456;border:3px solid #111b2e;color:#aab7ff;font-size:16px}
+.receive-field{margin-bottom:17px}
+.receive-amount{font-size:25px;font-weight:700;letter-spacing:-1px;color:#dfe5f8}
+.quote-details{border-top:1px solid #ffffff12;padding-top:15px;display:grid;gap:11px}
+.quote-details>div{display:flex;justify-content:space-between;align-items:center;color:#8491aa;font-size:10px}
+.quote-details b{color:#dce3f4;font:10px 'DM Mono',monospace;font-weight:400}
+.slippage{border:0;background:transparent;color:#a6b3ff;font:10px 'DM Mono',monospace}
+.swap-btn{width:100%;margin-top:20px;border:0;border-radius:10px;padding:15px;background:linear-gradient(100deg,#8795ff,#6878ed);color:#0a1123;font-size:12px;font-weight:800;box-shadow:0 8px 25px #6477ff35;transition:.2s}
+.swap-btn:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.08)}
+.swap-btn:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+.spinner{display:inline-block;width:11px;height:11px;border:2px solid #26335b;border-top-color:transparent;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.notice{display:flex;align-items:flex-start;gap:8px;margin-top:13px;font-size:10px;line-height:1.5;color:#8e9bb4;min-height:28px}
+.notice span{font-weight:800}
+.notice.success{color:#74d9b4}.notice.error{color:#ff9a9a}
+.card-foot{border-top:1px solid #ffffff10;margin-top:14px;padding-top:13px;display:flex;justify-content:space-between;color:#65728d;font:9px 'DM Mono',monospace}
+.side-panel{display:grid;gap:13px}
+.side-card{padding:19px}
+.side-title{display:flex;align-items:center;justify-content:space-between;font-size:9px}
+.wallet-balance{font-size:31px;letter-spacing:-1.5px;font-weight:800;margin:18px 0 2px}
+.wallet-balance small{font-size:13px;color:#8b9aff;letter-spacing:0}
+.balance-card p{font:10px 'DM Mono',monospace;color:#7f8ca7;margin:7px 0 15px}
+.text-link,.add-asset{background:transparent;border:0;color:#a5b1ff;padding:0;font-size:10px;font-weight:700}
+.add-asset{font-size:9px}
+.asset-row{display:flex;align-items:center;gap:10px;padding:14px 0 0;margin-top:12px;border-top:1px solid #ffffff10}
+.coin-icon{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;color:#10172a;font-weight:800;font-size:12px}
+.asset-row b,.asset-row small{display:block}
+.asset-row b{font-size:11px}.asset-row small{font-size:9px;color:#8491aa;margin-top:3px}
+.asset-network{margin-left:auto;color:#6c7a96;font:8px 'DM Mono',monospace}
+.asset-form{display:grid;gap:8px;margin-top:14px}
+.asset-form input{min-width:0;background:#0b1425;border:1px solid #ffffff18;border-radius:7px;padding:10px;color:#fff;font-size:10px}
+.asset-form button{background:#28365a;border:0;color:#dce3ff;border-radius:7px;padding:9px;font-size:10px;font-weight:700}
+.safety-card{display:flex;align-items:flex-start;gap:12px;background:#142a2a;border-color:#2b6254}
+.safety-icon{font-size:24px;color:#63d7b1}
+.safety-card b{font-size:11px;color:#a3e6d0}
+.safety-card p{font-size:9px;color:#8bb5a9;line-height:1.6;margin:6px 0 0}
+.bottom-info{max-width:1000px;margin:65px auto 55px;display:grid;grid-template-columns:repeat(3,1fr);gap:35px;position:relative;z-index:1}
+.bottom-info>div{border-top:1px solid #ffffff1c;padding-top:16px}
+.info-number{display:block;color:#8795ff;font:10px 'DM Mono',monospace;margin-bottom:13px}
+.bottom-info b{font-size:12px}.bottom-info p{font-size:10px;line-height:1.7;color:#8491aa}
+footer{max-width:1200px;margin:auto;border-top:1px solid #ffffff12;padding-top:20px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.footer-brand{font-size:16px}.footer-brand .brand-mark{width:23px;height:23px;font-size:16px;border-radius:7px}
+footer span{font-size:9px;color:#687691}
+@media(max-width:760px){.app-shell{padding:0 18px 25px}.topbar{height:70px}.topbar nav{display:none}.top-actions{gap:8px}.network-pill{font-size:8px;padding:7px}.connect-btn{font-size:9px;padding:10px}.hero{margin:55px auto 30px}h1{letter-spacing:-2.5px}.workspace{grid-template-columns:1fr;max-width:480px}.swap-card{padding:19px}.side-panel{grid-template-columns:1fr}.bottom-info{grid-template-columns:1fr;gap:13px;margin:42px auto}.bottom-info>div{padding-top:12px}.bottom-info p{margin-bottom:0}footer{gap:12px;flex-wrap:wrap}footer>span{order:3;width:100%}}
+@media(min-width:761px) and (max-width:1000px){.workspace{max-width:850px}.swap-card{padding:20px}}
